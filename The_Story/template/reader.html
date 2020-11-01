@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+  .nav {
+    margin-top: 8px;
+    display: flex;
+    background-color: #E1E1E1;
+    padding: 0px auto;
+    border-radius: 10px;
+    list-style: none;
+    justify-content: center;
+  }
+
+  .nav li a {
+    margin: auto 20px;
+    color: black;
+  }
+
+  .nav li a:hover {
+    background-color: gray;
+  }
+
+  * {
+    font-family: "Kanit", sans-serif;
+  }
+
+  .card {
+    display: block;
+    margin: 10px 10px 10px;
+    padding: 10px;
+
+  }
+
+  .alert {
+
+    /* margin: 0px 0px 20px; */
+    padding: 10px 10px 0px ;
+    display:inline-block;
+    
+  }
+</style>
+
+<!-- {{text1}}
+{% for s in text1 %}
+{% for a in text2 %}
+<div>
+  <p>{{name1}}</p>
+  <p >{{s}}</p>
+</div>
+<div>
+  <p align="right">{{name2}}</p>
+  <p align="right">{{a}}</p>
+</div>
+{%endfor%}
+{%endfor%} -->
+{% for s in text1 %}
+{% load index %}
+
+<p>{{name1}}</p>
+
+<p>{{ text1|index:forloop.counter0 }}</p>
+
+<p align="right">{{name2}}</p>
+
+<p align="right">{{ text2|index:forloop.counter0 }}</p>
+
+
+
+
+{%endfor%}
+
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+  .nav {
+    margin-top: 8px;
+    display: flex;
+    background-color: #E1E1E1;
+    padding: 0px auto;
+    border-radius: 10px;
+    list-style: none;
+    justify-content: center;
+  }
+
+  .nav li a {
+    margin: auto 20px;
+    color: black;
+  }
+
+  .nav li a:hover {
+    background-color: gray;
+  }
+
+  * {
+    font-family: "Kanit", sans-serif;
+  }
+
+  .card {
+    display: block;
+    margin: 10px 10px 10px;
+    padding: 10px;
+
+  }
+</style>
+<br>
+<h2 align="center">ตัวละคร</h2>
+
+<form action="/savestory/" method="GET">
+
+  <div class="form-group">
+    <label for="">ชื่อเรื่อง</label>
+    <input type="text" class="form-control" name='title'>
+    <div class="form-group">
+      <label for="">ชื่อตัวละครที่หนึ่ง</label>
+      <input type="text" class="form-control" name='namechat1'>
+    </div>
+    <div class="form-group">
+      <label for="">ชื่อตัวละครที่สอง</label>
+      <input type="text" class="form-control" name='namechat2'>
+    </div>
+    <br>
+    <h2 align="center">เนื้อเรื่อง</h2>
+  </div>
+
+  <div class="form-group">
+    <label for="">เรื่องย่อ</label>
+    <input type="text" class="form-control" name='desc'>
+  </div>
+  <div class="form-group">
+    <label for="">บทความของตัวละครที่หนึ่ง</label>
+    <input type="text" class="form-control" name='text1'>
+  </div>
+  <div class="form-group">
+    <label for="">บทความของตัวละครที่สอง</label>
+    <input type="text" class="form-control" name='text2'>
+  </div>
+  <input type="checkbox" id="vehicle1" name="vehicle1" value="ผจญภัย">
+  <label for="vehicle1"> ผจญภัย</label>
+  <input type="checkbox" id="vehicle2" name="vehicle1" value="ดราม่า">
+  <label for="vehicle2"> ดราม่า</label>
+  <input type="checkbox" id="vehicle3" name="vehicle1" value="ตลก">
+  <label for="vehicle3"> ตลก</label>
+  <input type="checkbox" id="vehicle4" name="vehicle1" value="แฟนตาซี">
+  <label for="vehicle4"> แฟนตาซี</label>
+  <input type="checkbox" id="vehicle5" name="vehicle1" value="สยองขวัญ">
+  <label for="vehicle5"> สยองขวัญ</label>
+  <input type="checkbox" id="vehicle6" name="vehicle1" value="โรแมนติก">
+  <label for="vehicle6"> โรแมนติก</label>
+  <input type="checkbox" id="vehicle7" name="vehicle1" value="ชีวิตประจำวัน">
+  <label for="vehicle7"> ชีวิตประจำวัน</label>
+  <input type="checkbox" id="vehicle8" name="vehicle1" value="ย้อยยุค">
+  <label for="vehicle8"> ย้อยยุค</label>
+  <input type="checkbox" id="vehicle9" name="vehicle1" value="อื่นๆ">
+  <label for="vehicle9"> อื่นๆ</label><br><br>
+
+
+
+  <input type="submit" value="บันทึก" class="btn btn-primary">
+
+
+
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,6 @@
+{
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "python.linting.pylintPath": "pylint_django",
+  "editor.fontSize": 18
+}

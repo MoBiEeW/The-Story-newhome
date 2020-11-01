@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+<style>
+  .nav {
+    margin-top: 8px;
+    display: flex;
+    background-color: #E1E1E1;
+    padding: 0px auto;
+    border-radius: 10px;
+    list-style: none;
+    justify-content: center;
+  }
+
+  .nav li a {
+    margin: auto 20px;
+    color: black;
+  }
+
+  .nav li a:hover {
+    background-color: gray;
+  }
+
+  * {
+    font-family: "Kanit", sans-serif;
+  }
+
+  .card {
+    display: block;
+    margin: 10px 10px 10px;
+    padding: 10px;
+
+  }
+</style>
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link" href="/home/ผจญภัย/">ผจญภัย</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/home/ดราม่า/">ดราม่า</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/home/ตลก/">ตลก</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/home/แฟนตาซี/">แฟนตาซี</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/home/สยองขวัญ/">สยองขวัญ</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/home/โรแมนติก/">โรแมนติก</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/home/ชีวิตประจำวัน/">ชีวิตประจำวัน</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/home/ย้อยยุค/">ย้อยยุค</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/home/อื่นๆ/">อื่นๆ</a>
+  </li>
+</ul>
+
+<div class="row">
+  {% for post in posts %}
+  {% if key in post.catergory %}
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.desc}}<br>
+          แต่โดย{{post.user}}
+        </p>
+        <a href=/readstory/{{post.id}}/ class="btn btn-primary">อ่านเลย</a>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+
+{% endblock %}
